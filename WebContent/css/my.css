@@ -1,0 +1,7 @@
+@CHARSET "UTF-8";
+.href {
+    color: -webkit-link;
+    cursor: auto;
+    text-decoration: underline;
+    cursor:pointer;
+}

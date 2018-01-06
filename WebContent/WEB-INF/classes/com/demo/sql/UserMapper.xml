@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//ibatis.apache.org//DTD Mapper 3.0//EN"      
+ "http://ibatis.apache.org/dtd/ibatis-3-mapper.dtd">
+<mapper namespace="com.demo.dao.UserDao">
+	<insert id="addUser" parameterType="com.demo.pojo.User">
+		insert into demo_user 
+		(userId,userName,passWord) 
+		values 
+		(#{userId},#{userName},#{passWord})
+	</insert>
+	<select id="querybyName" parameterType="java.lang.String" resultType="com.demo.pojo.User">
+		select * from demo_user where username=#{username}
+	</select>
+	<select id="querybyUser" parameterType="com.demo.pojo.User" resultType="com.demo.pojo.User">
+		select * from demo_user where username=#{userName} and password=#{passWord}
+	</select>
+	<select id="querybyId" parameterType="java.lang.String" resultType="com.demo.pojo.User">
+		select * from demo_user where userId=#{userId}
+	</select>
+</mapper>

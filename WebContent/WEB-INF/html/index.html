@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+<script type="text/javascript" src="javascript/jquery-1.11.1.js"></script>
+<script type="text/javascript" src="javascript/cookie-util.js"></script>
+<script type="text/javascript" src="javascript/common-util.js"></script>
+<script type="text/javascript" src="javascript/user.js"></script>
+<link rel="stylesheet" type="text/css" href="css/my.css">
+</head>
+<body>
+	<p>
+		<span>欢迎【<span id="username" style="color:red" ></span>】登陆</span>
+		<span><a class="href" onclick="logout()" style="float: right">退出</a></span>
+	</p>
+	<br>
+	<a id="toLogin" href="jumppage.do?destPageName=login.html">去登陆？</a>
+	<br>
+	<a id="toRegister" href="jumppage.do?destPageName=register.html">去注册？</a>
+	<script type="text/javascript">
+		$(function(){
+			var userId = getCookie("userId");
+			if(!userId){
+				alert("请先登陆！");
+				window.location.href="jumppage.do?destPageName=login.html";
+			}else{
+				$("#toLogin").hide();
+				$("#toRegister").hide();
+				$.ajax({
+					url: "user/queryUserbyuserId.do",
+					type: "post",
+					data: "userId="+userId,
+					success:function(result){
+						if('S' == result.status){
+							var username = result.data.userName;
+							$("#username").text(username); //设置元素内容的文本
+						}else{
+							alert(result.msg);
+						}
+					},
+					error:function(result){
+						alert(result.status);
+					}
+				});
+			}
+		})
+		
+	</script>
+</body>
+</html>
