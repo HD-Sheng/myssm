@@ -14,10 +14,9 @@ import com.demo.service.UserService;
 public class TestDemo {
 	@Autowired
 	private UserService userService;
-	
 	@Test
 	public void test() {
-		User user = new User("123123123", "aopTest", "mima");
+		User user = new User("123123123", "aopTest", "123456");
 		userService.addUser(user);
 		
 	}
