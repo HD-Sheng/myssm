@@ -1,5 +1,3 @@
-//序列化form表单
-
 function getElements(formId) {
     var form = document.getElementById(formId);
     var elements = new Array();

@@ -8,58 +8,32 @@
 <script type="text/javascript" src="javascript/user.js"></script>
 <script type="text/javascript" src="javascript/cookie-util.js"></script>
 <script type="text/javascript" src="javascript/common-util.js"></script>
-<link href="css/bootstrap.css" rel="stylesheet">
-<link href="css/style.css" rel="stylesheet">
-<link href="css/style-responsive.css" rel="stylesheet">
 </head>
 <body>
-	<div class="panel panel-default" style="margin-left: 300px;margin-right: 300px;">
-	    <div class="panel-heading">
-	        <h3 class="panel-title">请登录</h3>
-	    </div>
-	    <div class="panel-body">
-	        <form id="loginForm" class="clearfix" method="post" role="form">
-	            <div class="form-group">
-	                <div class="input-group">
-	                    <div class="input-group-addon">
-	                        <span class="glyphicon glyphicon-user"></span>
-	                    </div>
-	                    <input id="username" name="userName" type="text" class="form-control" placeholder="请输入用户名">
-	                </div>
-	            </div>
-	            <div class="form-group">
-	                <div class="input-group">
-	                    <div class="input-group-addon">
-	                        <span class="glyphicon glyphicon-lock"></span>
-	                    </div>
-	                    <input id="password" name="passWord" type="password" class="form-control" onkeydown="toLogin(event)" placeholder="请输入密码"/>
-	                </div>
-	            </div>
-	            <button id="login" type="button" class="btn btn-vmaig-auth pull-left">登录
-	            </button>
-	            <a href="jumppage.do?destPageName=register.html" class="btn btn-vmaig-auth pull-right">立即注册</a>
-	        </form>
-	    </div>
-	</div>
+	<h2>登陆</h2>
+	<form id="loginForm">
+		<table>
+			<tr>
+				<td><label>用户名</label> </td>
+				<td><input type="text" id="userName" name="userName" ></td>
+			</tr>
+			<tr>
+				<td><label>密码</label> </td>
+				<td><input type="password" id="passWord" name="passWord" ></td>
+			</tr>
+			<tr>
+				<td><input type="button" id="login" value="登陆" ></td>
+			</tr>
+			<tr>
+				<td><a href="jumppage.do?destPageName=register.html">还没有账号？</a>
+			</tr>
+		</table>
+	</form>
 	
 	<script type="text/javascript">
 		$(function(){
 			$("#login").click(login);
 		})
-		
-		function toLogin(e){
-			var keynum;
-			
-			if(window.event){
-				keynum = e.keyCode;
-			} else if(event.which){
-				keynum = e.which;
-			}
-			
-			if(keynum == 13){
-				login();
-			}
-		}
 	</script>
 </body>
 </html>

@@ -1,10 +1,5 @@
 package com.demo.pojo;
 
-/**
- * 用户实体类
- * @author sheng
- *
- */
 public class User {
 	String userId;
 	String userName;

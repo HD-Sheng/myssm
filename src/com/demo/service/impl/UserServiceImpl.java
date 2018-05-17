@@ -14,11 +14,6 @@ import com.demo.util.ConstantUtil;
 import com.demo.util.ResultUtil;
 import com.demo.util.UNIDUtil;
 
-/**
- * service实现类，进行业务逻辑处理
- * @author sheng
- *
- */
 @Service("userService")
 public class UserServiceImpl implements UserService {
 	private static final Log logger = LogFactory.getLog(UserServiceImpl.class);

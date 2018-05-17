@@ -1,29 +1,19 @@
-/**
- * 注册
- */
 function register() {
-	var username = $("#username").val();
-	var password = $("#password").val();
-	var password2 = $("#password2").val();
-	if(!username || !password || !password2){
-		alert("请校验录入项");
-		return;
-	}
-	if(password != password2){
-		alert("密码与确认密码不一致！");
-		return;
-	}
     var formInfo = serializeForm("registerForm");
     $.ajax({
         url: "user/register.do",
         data: formInfo,
         type: "post",
         success:function(result){
+        	alert(result);
+        	alert(typeof(result));
 			if(result.status=='S'){
+				alert("s");
 				alert(result.msg);
 				//进入login.html页面
 				window.location.href="jumppage.do?destPageName=login.html";
 			}else{
+				alert("f");
 				alert(result.msg);
 			}
 		},
@@ -33,16 +23,7 @@ function register() {
     });
 }
 
-/**
- * 登陆
- */
 function login(){
-	var username = $("#username").val();
-	var password = $("#password").val();
-	if(!username || !password){
-		alert("请校验录入项");
-		return;
-	}
 	var formInfo = serializeForm("loginForm");
 	$.ajax({
 		url: "user/login.do",
@@ -64,12 +45,7 @@ function login(){
 	});
 }
 
-/**
- * 退出
- */
 function logout(){
 	deleteCookie("userId");
-	$("#toLogin").show();
-	$("#toRegister").show();
-	$("#userinfo").hide();
+	window.location.href="jumppage.do?destPageName=login.html";
 }

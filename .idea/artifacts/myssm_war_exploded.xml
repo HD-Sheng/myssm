@@ -1,0 +1,29 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="myssm:war exploded">
+    <output-path>$PROJECT_DIR$/WebContent</output-path>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="myssm" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="module" name="commons-dbcp-1.2.2.jar" module-name="myssm" />
+          <element id="library" level="module" name="mysql-connector-java-5.1.39-bin.jar" module-name="myssm" />
+          <element id="library" level="module" name="commons-pool.jar" module-name="myssm" />
+          <element id="library" level="module" name="mybatis-3.2.5.jar" module-name="myssm" />
+          <element id="library" level="module" name="mybatis-spring-1.2.2.jar" module-name="myssm" />
+          <element id="library" level="module" name="jackson-core-2.4.1.jar" module-name="myssm" />
+          <element id="library" level="module" name="jackson-databind-2.4.1.jar" module-name="myssm" />
+          <element id="library" level="module" name="jackson-annotations-2.4.1.jar" module-name="myssm" />
+          <element id="library" level="module" name="aspectjrt.jar" module-name="myssm" />
+          <element id="library" level="module" name="aopalliance-1.0.jar" module-name="myssm" />
+          <element id="library" level="module" name="aspectjweaver.jar" module-name="myssm" />
+          <element id="library" level="module" name="junit-4.9.jar" module-name="myssm" />
+          <element id="library" level="project" name="spring-4.2.0.RELEASE" />
+          <element id="file-copy" path="E:/java/jar/commons-logging-1.2-bin/commons-logging-1.2/commons-logging-1.2.jar" />
+        </element>
+      </element>
+      <element id="javaee-facet-resources" facet="myssm/web/Web" />
+    </root>
+  </artifact>
+</component>

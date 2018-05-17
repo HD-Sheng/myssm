@@ -2,60 +2,50 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>首页</title>
+<title>Insert title here</title>
 <script type="text/javascript" src="javascript/jquery-1.11.1.js"></script>
 <script type="text/javascript" src="javascript/cookie-util.js"></script>
 <script type="text/javascript" src="javascript/common-util.js"></script>
 <script type="text/javascript" src="javascript/user.js"></script>
 <link rel="stylesheet" type="text/css" href="css/my.css">
-<link href="css/bootstrap.css" rel="stylesheet">
-<link href="css/style.css" rel="stylesheet">
-<link href="css/style-responsive.css" rel="stylesheet">
 </head>
 <body>
-	<div class="panel panel-default" style="margin-left: 300px;margin-right: 300px;">
-		<dir class="panel-heading">
-			<p id="userinfo">
-				<span>欢迎【<span id="username" style="color: red"></span>】登陆</span>
-				<span><a class="href" onclick="logout()" style="float: right">退出</a></span>
-				<br>
-			</p>
-		</dir>
-		<div class="panel-body">
-			<a id="toLogin" href="jumppage.do?destPageName=login.html">去登陆？</a>
-			<br> <a id="toRegister" href="jumppage.do?destPageName=register.html">去注册？</a>
-		</div>
-	</div>
-
+	<p>
+		<span>欢迎【<span id="username" style="color:red" ></span>】登陆</span>
+		<span><a class="href" onclick="logout()" style="float: right">退出</a></span>
+	</p>
+	<br>
+	<a id="toLogin" href="jumppage.do?destPageName=login.html">去登陆？</a>
+	<br>
+	<a id="toRegister" href="jumppage.do?destPageName=register.html">去注册？</a>
 	<script type="text/javascript">
-		$(function() {
+		$(function(){
 			var userId = getCookie("userId");
-			if (!userId) {
-				$("#toLogin").show();
-				$("#toRegister").show();
-				$("#userinfo").hide();
-			} else {
-				$("#userinfo").show();
+			if(!userId){
+				alert("请先登陆！");
+				window.location.href="jumppage.do?destPageName=login.html";
+			}else{
 				$("#toLogin").hide();
 				$("#toRegister").hide();
 				$.ajax({
-					url : "user/queryUserbyuserId.do",
-					type : "post",
-					data : "userId=" + userId,
-					success : function(result) {
-						if ('S' == result.status) {
+					url: "user/queryUserbyuserId.do",
+					type: "post",
+					data: "userId="+userId,
+					success:function(result){
+						if('S' == result.status){
 							var username = result.data.userName;
 							$("#username").text(username); //设置元素内容的文本
-						} else {
+						}else{
 							alert(result.msg);
 						}
 					},
-					error : function(result) {
+					error:function(result){
 						alert(result.status);
 					}
 				});
 			}
 		})
+		
 	</script>
 </body>
 </html>

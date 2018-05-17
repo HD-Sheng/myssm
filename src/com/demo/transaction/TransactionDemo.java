@@ -4,11 +4,6 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.aspectj.lang.ProceedingJoinPoint;
 
-/**
- * SpringAOP demo
- * @author sheng
- *
- */
 public class TransactionDemo {
 	private static final Log logger = LogFactory.getLog(TransactionDemo.class);
 	
@@ -21,7 +16,7 @@ public class TransactionDemo {
 	}
 	
 	/**
-	 * 如果controller有返回值，则用 proceed()接收
+	 * 如果controller有返回值，则必须用 proceed 方法接收，否则前台无法获取
 	 * @param joinPoing
 	 * @return
 	 * @throws Throwable

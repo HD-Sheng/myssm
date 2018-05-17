@@ -1,10 +1,5 @@
 package com.demo.util;
 
-/**
- * 全局常量类
- * @author sheng
- *
- */
 public class ConstantUtil {
 	
 	/**
