@@ -9,6 +9,11 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.demo.service.UserService;
 import com.demo.util.ResultUtil;
 
+/**
+ * 查询用户
+ * @author sheng
+ *
+ */
 @Controller
 @RequestMapping("/user")
 public class UserController {

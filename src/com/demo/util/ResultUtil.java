@@ -1,5 +1,10 @@
 package com.demo.util;
 
+/**
+ * Controller层用于返回的封装类
+ * @author sheng
+ *
+ */
 public class ResultUtil {
 	public String status;
 	public String msg;
@@ -7,6 +12,9 @@ public class ResultUtil {
 	
 	public ResultUtil() {
 		super();
+	}
+	public ResultUtil(String status, String msg){
+		this(status, msg, null);
 	}
 	public ResultUtil(String status, String msg, Object data) {
 		super();

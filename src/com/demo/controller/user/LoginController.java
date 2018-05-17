@@ -9,6 +9,11 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
 
+/**
+ * 登陆
+ * @author sheng
+ *
+ */
 @Controller
 @RequestMapping("/user")
 public class LoginController {

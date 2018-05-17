@@ -4,6 +4,11 @@ import java.net.InetAddress;
 import java.net.UnknownHostException;
 import java.security.SecureRandom;
 
+/**
+ * 用于生成一个32位的随机数
+ * @author sheng
+ *
+ */
 public class UNIDUtil {
 	private SecureRandom seeder;
 
